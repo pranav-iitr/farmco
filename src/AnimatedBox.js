@@ -27,15 +27,18 @@ const AnimatedBox = ({ scrollHeight }) => {
         const yPosition = endYPosition * scrollFraction;
         miniBoxRef.current.style.transform = `translateX(${xPosition}px) translateY(${yPosition}px)`;
       }
-      console.log(scrollTop / maxScroll, scrollFraction);
+      
       if (scrollTop / maxScroll - 0.2 > scrollFraction) {
         //  make the box disaper on scroll
-        console.log("disapear");
+        
         const newOpacity = Math.max(
           0.8 - (scrollTop / maxScroll - scrollFraction),
           0
         );
         boxRef.current.style.opacity = newOpacity;
+      }
+      else {
+        boxRef.current.style.opacity = 1;
       }
     }
   };
@@ -50,7 +53,11 @@ const AnimatedBox = ({ scrollHeight }) => {
 
   return (
     <div className="animated-box" ref={boxRef}>
-      <div ref={miniBoxRef} className="box bg-red-400 w-[40%] h-[40%] "></div>
+      <div ref={miniBoxRef} style={
+        {
+          transform: "translateX(140%)"
+        }
+      } className="box bg-red-400 w-[40%] h-[40%] transform: translateX(calc(100vw - 300px)) "></div>
     </div>
   );
 };
