@@ -29,11 +29,14 @@ const AnimatedBox = ({ scrollHeight }) => {
       }
       console.log(scrollTop / maxScroll, scrollFraction);
       if (scrollTop / maxScroll - 0.2 > scrollFraction) {
-      //  make the box disaper on scroll
+        //  make the box disaper on scroll
         console.log("disapear");
-        const newOpacity = Math.max(0.8-(scrollTop / maxScroll - scrollFraction), 0);
+        const newOpacity = Math.max(
+          0.8 - (scrollTop / maxScroll - scrollFraction),
+          0
+        );
         boxRef.current.style.opacity = newOpacity;
-      } 
+      }
     }
   };
 

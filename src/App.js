@@ -6,7 +6,8 @@ function App() {
   return (
     <div className="App">
       <div className="flex flex-row gap-[300px]">
-        <AnimatedText scrollHeight={1} />
+        <AnimatedText scrollHeight={1} />{" "}
+        {/* 1 means 100% height of the screen */}
         <AnimatedBox scrollHeight={1} />
       </div>
 
