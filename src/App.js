@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import "./App.css";
 import AnimatedBox from "./AnimatedBox";
 import AnimatedText from "./AnimatedText";
@@ -11,7 +11,7 @@ function App() {
         <AnimatedBox scrollHeight={1} />
       </div>
 
-      <div className="h-[500vh]"></div>
+      <div className="h-[800vh]"></div>
 
       <div className="text-white"> end of scroll </div>
       <div className="h-[25vh]"></div>
